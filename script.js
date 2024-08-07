@@ -50,7 +50,7 @@ let carObj = {
 
     resultElement.innerHTML = `Estimated time: ${timeHours}hours ${timeMinutes}minutes, fuel: ${fuel.toFixed(2)}liters`;
   },
-}
+};
 
 const carInfoElement = document.getElementById('car-info');
 carInfoElement.addEventListener('click', () => carObj.getInfo());
@@ -66,3 +66,89 @@ calculateTripElement.addEventListener('click', () => carObj.calculateTrip())
 
 
 //Task 2
+let timeObj = {
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+
+  showTime() {
+    let fullTime = '';
+
+    fullTime = this.hours > 9 
+    ? this.hours + ':' 
+    : '0' + this.hours + ':';
+
+    fullTime = this.minutes > 9 
+    ? fullTime + this.minutes + ':' 
+    : fullTime + '0' + this.minutes + ':';
+
+    fullTime = this.seconds > 9 
+    ? fullTime + this.seconds 
+    : fullTime + '0' + this.seconds;
+
+    document.getElementById('time-result').innerHTML = fullTime;
+  },
+  secondsShift(initialValue) {
+    const secondsAmount = initialValue ? initialValue : Number(document.getElementById('change-seconds').value);
+    let minutesToAdd = Math.floor(secondsAmount / 60);
+    const secondsToAdd = secondsAmount % 60;
+
+    if (this.seconds + secondsToAdd >= 60) {
+      minutesToAdd += Math.floor((this.seconds + secondsToAdd) / 60);
+      this.seconds = (this.seconds + secondsToAdd) % 60;
+    } else {
+      this.seconds += secondsToAdd;
+    }
+    if (minutesToAdd) {
+      this.minutesShift(minutesToAdd);
+    }
+
+    document.getElementById('change-seconds').value = '';
+    this.showTime();
+  },
+  minutesShift(initialValue) {
+    const minutesAmount = initialValue ? initialValue : Number(document.getElementById('change-minutes').value);
+    let hoursToAdd = Math.floor(minutesAmount / 60);
+    let minutesToAdd = minutesAmount % 60;
+
+    if (this.minutes + minutesToAdd >= 60) {
+      hoursToAdd += Math.floor((this.minutes + minutesToAdd) / 60);
+      this.minutes = (this.minutes + minutesToAdd) % 60;
+    } else {
+      this.minutes += minutesToAdd;
+    }
+    if (hoursToAdd) {
+      this.hoursShift(hoursToAdd);
+    }
+
+    if(!initialValue) {
+      document.getElementById('change-minutes').value = '';
+      this.showTime();
+    }
+  },
+  hoursShift(initialValue) {
+    const hoursAmount = initialValue ? initialValue : Number(document.getElementById('change-hours').value);
+    const hoursToAdd = hoursAmount % 24;
+
+    this.hours = (this.hours + hoursToAdd) >= 24 
+    ? (this.hours + hoursToAdd) % 24 
+    : this.hours + hoursToAdd;
+    
+    if(!initialValue) {
+      document.getElementById('change-hours').value = '';
+      this.showTime();
+    }
+  },
+};
+
+const showTimeElement = document.getElementById('show-time');
+showTimeElement.addEventListener('click', () => timeObj.showTime());
+
+const calculateSecondsElement = document.getElementById('change-seconds-button');
+calculateSecondsElement.addEventListener('click', () => timeObj.secondsShift());
+
+const calculateMinutesElement = document.getElementById('change-minutes-button');
+calculateMinutesElement.addEventListener('click', () => timeObj.minutesShift());
+
+const calculateHoursElement = document.getElementById('change-hours-button');
+calculateHoursElement.addEventListener('click', () => timeObj.hoursShift());
