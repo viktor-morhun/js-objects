@@ -8,6 +8,49 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  
+  <div class="container">
+    <section class="task" id="car-task">
+        <h2 class="task__title">Car Object</h2>
+        <button class="task__button" id="car-info">Show Car Info</button>
+        <label class="task__label" for="driver-name">Driver Name</label>
+        <input class="task__input" type="text" id="driver-name" placeholder="Driver Name">
+        <button class="task__button" id="add-driver">Add Driver</button>
+        <label class="task__label" for="check-driver">Check Driver</label>
+        <input class="task__input" type="text" id="check-driver" placeholder="Check Driver">
+        <button class="task__button" id="check-driver-button">Check Driver</button>
+        <label class="task__label" for="distance">Distance (km)</label>
+        <input class="task__input" type="text" id="distance" placeholder="Distance (km)">
+        <button class="task__button" id="calculate-trip">Calculate Trip</button>
+        <p class="task__result" id="car-result"></p>
+    </section>
+
+    <section class="task" id="time-task">
+        <h2 class="task__title">Time Object</h2>
+        <button class="task__button" id="show-time">Show Time</button>
+        <label class="task__label" for="change-seconds">Change Seconds</label>
+        <input class="task__input" type="number" id="change-seconds" placeholder="Change Seconds">
+        <button class="task__button" id="change-seconds-button">Change Seconds</button>
+        <label class="task__label" for="change-minutes">Change Minutes</label>
+        <input class="task__input" type="number" id="change-minutes" placeholder="Change Minutes">
+        <button class="task__button" id="change-minutes-button">Change Minutes</button>
+        <label class="task__label" for="change-hours">Change Hours</label>
+        <input class="task__input" type="number" id="change-hours" placeholder="Change Hours">
+        <button class="task__button" id="change-hours-button">Change Hours</button>
+        <p class="task__result" id="time-result"></p>
+    </section>
+
+    <section class="task" id="fraction-task">
+        <h2 class="task__title">Fraction Object</h2>
+        <label class="task__label" for="fraction1">Fraction 1 (a/b)</label>
+        <input class="task__input" type="text" id="fraction1" placeholder="Fraction 1 (a/b)">
+        <label class="task__label" for="fraction2">Fraction 2 (a/b)</label>
+        <input class="task__input" type="text" id="fraction2" placeholder="Fraction 2 (a/b)">
+        <button class="task__button" id="add-fractions">Add Fractions</button>
+        <button class="task__button" id="subtract-fractions">Subtract Fractions</button>
+        <button class="task__button" id="multiply-fractions">Multiply Fractions</button>
+        <button class="task__button" id="divide-fractions">Divide Fractions</button>
+        <p class="task__result" id="fraction-result"></p>
+    </section>
+  </div>
 </body>
 </html>

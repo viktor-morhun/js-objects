@@ -1,0 +1,108 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.task {
+  width: 960px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task__title {
+  margin-top: 0;
+}
+
+.task__label {
+  display: block;
+  margin: 30px 0 10px 0;
+  font-weight: bold;
+}
+
+.task__input {
+  display: block;
+  width: 940px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.task__button,
+.reset__button {
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  font-weight: 700;
+}
+
+.task__button:hover {
+  background-color: #0056b3;
+}
+
+.reset__button {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+
+.reset__button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.task__result {
+  margin-top: 10px;
+  padding: 10px;
+  min-height: 20px;
+  background-color: #e9ecef;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.multiply__span {
+  display: block;
+}
+
+.task__container {
+  display: inline-block;
+  border: 1px solid #cecece;
+  width: 100px;
+  padding: 5px;
+}
+
+.task__result--multiplication {
+  display: flex;
+  gap: 15px;
+  min-height: 20px;
+  height: fit-content;
+}
+
+.hide {
+  display: none;
+}
